@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# abort on the first failure
+set -e
+
 echo --------------
 # Absolute path to this script, e.g. /home/user/bin/foo.sh
 SCRIPT=$(readlink -f "$0")
@@ -59,15 +62,16 @@ set -v
 git log > $gitCommitsDir/gitlog.txt
 
 # compile statistics project
-mvn compile -pl statistics -am -e
+mvn clean compile -pl statistics -am -e
 
 # run statistics main to create commits.txt from gitlog.txt
-mvn exec:java -Dexec.mainClass=org.dkeeney.git.Statistics -pl statistics -e
+mvn exec:java -Dexec.mainClass=org.dkeeney.git.Harvester -pl statistics -e
 
 # create directory to host the git clone if it does not exist
-if [ ! -d "$gitCloneDir" ]; then
-  mkdir $gitCloneDir
-fi 
+if [ -d "$gitCloneDir" ]; then
+    rm -rf $gitCloneDir
+fi
+mkdir $gitCloneDir 
 
 cd $gitCloneDir
 git clone $repositoryDir
