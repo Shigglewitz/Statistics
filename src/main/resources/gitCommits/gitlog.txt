@@ -1,0 +1,435 @@
+commit a67d6d293e1eec8e94d198c590eade1e5fe14a1f
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Fri Jan 31 23:28:07 2014 +0800
+
+    Remove sysout
+
+commit 3c6c40e198afdf88d0e89c77bb98e4a67c502b88
+Merge: 7e4eb12 7c615d2
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Fri Jan 31 23:24:38 2014 +0800
+
+    Merge branch 'feature/refactor-modules' into develop
+
+commit 7c615d2d7f271d068620f6e4a09115bc06c74db0
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Fri Jan 31 23:24:20 2014 +0800
+
+    Added test for config class
+
+commit 6b2a23ff3192911baafb9018ce653c6f8597db45
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Fri Jan 31 23:17:38 2014 +0800
+
+    Added test for image comparison
+
+commit 8566a643f456a776e6e11500e563000cfdadc6df
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Fri Jan 31 13:44:09 2014 +0800
+
+    Rename constants to refer to images
+
+commit ac817ce89ba053ee715088b99fe0824b025e8a4c
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Fri Jan 31 13:43:27 2014 +0800
+
+    Move default directory into Constants
+
+commit d75c50f0c4f069f0fd672ef638d87d5d214a51e5
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Fri Jan 31 13:40:07 2014 +0800
+
+    Rename packages for equations module
+
+commit 3bac2e03f053d21fe7e37fe9d2c0676ca5f14bae
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Fri Jan 31 13:38:05 2014 +0800
+
+    Add dependencies for new modules
+
+commit 2633c092ae597ab8d7a71f71bdb671e4f7550152
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Fri Jan 31 12:56:31 2014 +0800
+
+    Moving projects under a common directory
+
+commit 7e4eb12efe834ed0ad973c8d1eb525e893b67dd6
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Fri Jan 31 23:19:14 2014 +0800
+
+    Fix encoding warning
+
+commit d1cc3b22cb4846d6f58d7671efd94624930fd94c
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Fri Jan 31 01:00:49 2014 +0800
+
+    Version bump to 1.0.0
+
+commit 88ce308c41e0aa2799542192cd0cd6335f1f97fd
+Merge: fe3ae22 8c87f7f
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Fri Jan 31 00:55:39 2014 +0800
+
+    Merge branch 'feature/add-gui' into develop
+
+commit 8c87f7fd1631852bd65e7fd6e1ecf396b7d4690a
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Fri Jan 31 00:54:31 2014 +0800
+
+    Refactor initialization and click functionality
+
+commit 547b9222e43dc49dea03d68e213e54987ddea140
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Fri Jan 31 00:42:41 2014 +0800
+
+    Added equation labels and save options
+
+commit 1d0b89797e1e897ffe43f15f40af55b0a8c1a83e
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Thu Jan 30 18:24:28 2014 +0800
+
+    Can save images
+
+commit 68a9639ee09e2efcf0dd4b805484394d1f7fc3e0
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Thu Jan 30 18:05:22 2014 +0800
+
+    Initial GUI
+    
+    Only displays random images
+
+commit 7b6377de63a8d8e472a104fee8813403b85472d2
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Thu Jan 30 18:04:57 2014 +0800
+
+    Remove unnecessary exception
+
+commit fe3ae227e77ac5e1f830000844dc33975adc95ba
+Merge: 0732f33 960ffcd
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Thu Jan 30 16:04:57 2014 +0800
+
+    Merge branch 'feature/zoom-factor' into develop
+
+commit 960ffcd9a5bc15101e5bb8c693dda560cddd33fd
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Thu Jan 30 15:38:28 2014 +0800
+
+    Added pixel shifting
+
+commit 0be3a94467e1a2b96498d1d44abcea17aca539fa
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Thu Jan 30 09:04:30 2014 +0800
+
+    Refactor color graph tests
+
+commit 0732f33fadf628c0da70798ee2ad9d22fe2be159
+Merge: 59df28e 8c143e6
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Thu Jan 30 00:05:23 2014 +0800
+
+    Merge branch 'feature/trigonometric-equations' into develop
+
+commit 8c143e6919e44e06e6f912fb765a49974c5dcffd
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Thu Jan 30 00:05:07 2014 +0800
+
+    Added test for trigonometric color graphing
+
+commit fb8c27efe1be1df8bb5e6e21159ee2bc15652cf6
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Thu Jan 30 00:02:36 2014 +0800
+
+    Trigonometric equations
+
+commit d04a4262d3373c2dd68e7eda25815d930f353545
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Thu Jan 30 00:02:02 2014 +0800
+
+    Refactor default image type
+
+commit 1f573982aeea5e7a7634607df07ba1979c43dcf3
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Thu Jan 30 00:01:37 2014 +0800
+
+    Tests for trigonometric functions
+
+commit d283085b2017244256eb83f6427377e0c6fe1ee4
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Wed Jan 29 22:53:10 2014 +0800
+
+    Refactored the token parsing regex
+
+commit 59df28e1f4bb8b279f917f3f586eced26e6965a0
+Merge: 17cb88d 1ec8e8a
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Wed Jan 29 22:46:15 2014 +0800
+
+    Merge branch 'feature/djikstra-shunting' into develop
+
+commit 1ec8e8a76fad1877cff31e5832ea164063f0f1b8
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Wed Jan 29 22:45:42 2014 +0800
+
+    Improved graph related tests
+
+commit b724474ad5d7d55eb589632991f9af32226025ea
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Wed Jan 29 22:44:46 2014 +0800
+
+    Finished Djikstra's algorithm
+
+commit ba23081e53f2f9327d0d19de3e3e3eb3b5904b60
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Wed Jan 29 09:09:03 2014 +0800
+
+    Beginning to implement Djikstra's shunting algorithm
+    
+    Doesn't compile yet
+
+commit b6b1a3e24900c31ce11760d72b46198bcdb27c5b
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Tue Jan 28 23:59:42 2014 +0800
+
+    Added more tests and a note on djikstra's shunting algorithm
+
+commit 0368d808827945a7fe2e9ec0815bdadd9eb9e4d6
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Tue Jan 28 22:57:35 2014 +0800
+
+    Parses operations into a list, but doesn't handle order of operations correctly.
+
+commit 9c6e8d091a19241a8ddb5934fdfc042547c8bcf7
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Tue Jan 28 22:12:37 2014 +0800
+
+    temp
+
+commit 17cb88d033aafff0441777e106a975b49825a810
+Merge: 1096017 67dad42
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Tue Jan 28 19:51:57 2014 +0800
+
+    Merge branch 'feature/color-grapher' into develop
+
+commit 67dad4264ad6aa706a82fe870bcf97d58c8b85d5
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Tue Jan 28 19:39:56 2014 +0800
+
+    Generates colored graphs
+
+commit 398c4a9918b7914602ad752765d7e43d9c42c171
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Tue Jan 28 00:12:52 2014 +0800
+
+    Implementing color rounding strategies
+
+commit c70f5cf76b4ae0d405af86ea725a6495e5da7752
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Tue Jan 28 00:00:20 2014 +0800
+
+    Creates simple color maps
+
+commit c92ec414ba181ab414ecd35d539e413f9b2e837b
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Mon Jan 27 23:59:01 2014 +0800
+
+    Refactor color related utility methods into ColorUtils
+
+commit 1096017ed142c178c82e84acac4a18710bf5ec7c
+Merge: 1022765 10720e4
+Author: U-Daniel-PC\Daniel <Daniel@Daniel-PC.(none)>
+Date:   Mon Jan 27 23:06:34 2014 +0800
+
+    Merge branch 'feature/grapher_image_creation' into develop
+
+commit 10720e45331b347aa79f0d153fe885805757d931
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Mon Jan 27 22:55:46 2014 +0800
+
+    Creates graphs of the given equation
+
+commit fe523c9b327dee6d1fd4ce5981df5a7e36363bce
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Mon Jan 27 09:06:44 2014 +0800
+
+    Draws axes and ticks along the axes
+
+commit e36c5db6cc9cfdd40ee77d47b0c6d1e510e73fea
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Mon Jan 27 00:18:28 2014 +0800
+
+    Base level utilities for creating and saving image files
+
+commit 10227658523c6123257308f30a4f76553e4ec85d
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Mon Jan 27 00:26:31 2014 +0800
+
+    Added a useful tip for counting line numbers in a project
+
+commit 41345ef1997a967182401a7b3d7269c2d204f5b9
+Merge: fa87347 4b8602e
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Sun Jan 26 22:44:59 2014 +0800
+
+    Merge branch 'feature/grapher_creation' into develop
+
+commit 4b8602e75f3a3af6619602ec2358ebf0b6b752b8
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Sun Jan 26 22:36:57 2014 +0800
+
+    Refactored to bigdecimal instead of double
+
+commit cb43054eae782cb57d64b5f6532eefc764706789
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Sun Jan 26 18:21:17 2014 +0800
+
+    Evaluates a single equation many times
+
+commit fa87347f52d4041322d6d9a04079bc4131e04909
+Merge: 9961291 14a75aa
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Sun Jan 26 18:49:10 2014 +0800
+
+    Merge branch 'feature/negative_numbers' into develop
+
+commit 14a75aaeeb9f30ac003d85d3b1787b8da440478a
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Sun Jan 26 18:48:41 2014 +0800
+
+    Handles negative numbers
+
+commit 0acfdda6b4333d2935b62631a4f3ac2b8303de38
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Sun Jan 26 18:27:37 2014 +0800
+
+    Tests for negative number handling
+
+commit 9961291cabf5141edc46a782b1bdfdabc03aa227
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Sun Jan 26 17:45:57 2014 +0800
+
+    Refactor exceptions
+
+commit 47172f8652d636d805c922af393050a25888d637
+Merge: 6ae9398 e931c05
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Sun Jan 26 14:04:07 2014 +0800
+
+    Merge branch 'feature/handle_variables' into develop
+
+commit e931c05b12a4953ef52489b4906630468111de33
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Sun Jan 26 14:03:15 2014 +0800
+
+    Evaluates variables
+
+commit 158f9f63dc982280ff216d7c71293f1888ef0653
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Sat Jan 25 21:44:31 2014 +0800
+
+    Handles validation of variables
+
+commit 6ae9398c2d1d6a3cd2dc25bd9d446237da6137f0
+Merge: 1b105b1 0546f3b
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Sat Jan 25 18:51:07 2014 +0800
+
+    Merge branch 'feature/handle_decimal_point_in_regex' into develop
+
+commit 0546f3b9a89ff29a40ad6b9084d79c941f9241d2
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Sat Jan 25 18:50:08 2014 +0800
+
+    Now handles decimal points in the validation regex
+
+commit 1b105b15a24585e9cbdb3aada8fc0be2c7d17b91
+Merge: b4103a0 368aa34
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Sat Jan 25 12:31:17 2014 +0800
+
+    Merge branch 'feature/new-parens'
+
+commit 368aa34b3dff3149cbe34f805a99ec8a75b5d44b
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Sat Jan 25 12:29:32 2014 +0800
+
+    Refactor away Valuable interface.  No longer necessary due to how Equation evaluates
+
+commit bef498ebbd9b117ef03a6ada2d032f6b6f0fe2d5
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Sat Jan 25 12:26:10 2014 +0800
+
+    Handles parentheses now.
+
+commit b4103a023c52324755094ccf95b06413512a434c
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Sat Jan 25 01:06:12 2014 +0800
+
+    Validates equations with parentheses and finds matched groups
+
+commit 75f085922f776ff41d3c3365dab6cc0e99f93047
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Thu Jan 23 21:59:37 2014 +0800
+
+    Detect implicit multiplication using parentheses and add *
+
+commit 9b3ee32aa5e1169b4b2845ec1431737064be0e59
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Thu Jan 23 21:59:15 2014 +0800
+
+    Refactor to use Valuables instead of Terms
+
+commit dc7ba62b2381ee737d45fc84858177f291ff8996
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Thu Jan 23 21:58:22 2014 +0800
+
+    Made the POM a little more fancy and included apache commons lang
+
+commit 16c1911fd7e149b3ef1381f9bda145afcc24aff1
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Thu Jan 23 01:03:55 2014 +0800
+
+    Order of operations
+
+commit 854e4e9ed36d58008ddb47f04e4514fd985146ad
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Thu Jan 23 00:38:53 2014 +0800
+
+    Tests for equation validity before creating instance.
+
+commit c807149c0c0689bcc1afb6c6af5c1a7a7b0173ab
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Thu Jan 23 00:08:01 2014 +0800
+
+    Handles long equations now
+
+commit a1fc565b439e12db455af14dbfad9ceb9aa8ad02
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Wed Jan 22 23:50:53 2014 +0800
+
+    Handles simple equations
+
+commit 86c99ced5b3b664eb0a625bc6d02ba7ace038d63
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Wed Jan 22 23:50:35 2014 +0800
+
+    Force 1.7 compilation
+
+commit ad36fc9f5206a9ff31fee5280d516aa9de1973ac
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Wed Jan 22 20:46:07 2014 +0800
+
+    Junit dependency
+
+commit dda45b80b5f11f1cc8995afebfa9f0fa9c96cd2d
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Wed Jan 22 20:01:24 2014 +0800
+
+    Initial Graphing project commit.
+
+commit 6df90d8db099a57e25a2173f6fa30471eaa002bb
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Wed Jan 22 20:01:02 2014 +0800
+
+    Initial .gitignore
