@@ -9,15 +9,15 @@ import java.util.Stack;
 
 public class Statistics {
     public static void main(String[] args) throws IOException {
-        File gitLog = new File("statistics/src/main/resources/git/gitlog.txt");
+        File gitLog = new File(
+                "statistics/src/main/resources/gitCommits/gitlog.txt");
         File commitsFile = new File(
-                "statistics/src/main/resources/git/commits.txt");
+                "statistics/src/main/resources/gitCommits/commits.txt");
         Scanner in = new Scanner(gitLog);
         Stack<String> commits = new Stack<>();
         String nextLine;
         StringBuilder commitsTxt = new StringBuilder();
         BufferedWriter writer = null;
-        System.out.println("sup");
         try {
             while (in.hasNextLine()) {
                 nextLine = in.nextLine();
