@@ -7,12 +7,12 @@ import java.util.List;
 
 import org.junit.Test;
 
-public class CommitTest {
+public class MavenResultsTest {
     @Test
     public void testLoadCommitData() {
         Commit c = new Commit("a67d6d293e1eec8e94d198c590eade1e5fe14a1f");
         c.loadCommitData("testGitStats/");
-        List<Module> modules = c.getModules();
+        List<Module> modules = c.getMavenResults().getModules();
         List<TestContainer> tests = null;
         Module m = null;
         String[] moduleNames = { "DKeeney Projects", "Common Config",
@@ -49,5 +49,11 @@ public class CommitTest {
         assertEquals("Wrong number of tests ran", 3, tests.get(1).getTestsRun());
         assertEquals("Wrong number of tests ran", 6, tests.get(2).getTestsRun());
         assertEquals("Wrong total number of tests ran", 13, m.getTestsRun());
+    }
+
+    @Test
+    public void testLoadCommitDataWithoutReactorBuildOrder() {
+        Commit c = new Commit("75f085922f776ff41d3c3365dab6cc0e99f93047");
+        c.loadCommitData("testGitStats/");
     }
 }
