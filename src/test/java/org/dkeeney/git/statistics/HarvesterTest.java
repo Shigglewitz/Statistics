@@ -1,10 +1,13 @@
 package org.dkeeney.git.statistics;
 
+import static org.junit.Assert.assertEquals;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.Scanner;
 
 import org.dkeeney.git.Harvester;
 import org.junit.Test;
@@ -18,6 +21,7 @@ public class HarvesterTest {
         StringBuilder builder = new StringBuilder();
         BufferedWriter writer = null;
         Harvester h = new Harvester();
+        Scanner in = null;
         String[] commitHashes = { "d1cc3b22cb4846d6f58d7671efd94624930fd94c",
                 "d75c50f0c4f069f0fd672ef638d87d5d214a51e5",
                 "67dad4264ad6aa706a82fe870bcf97d58c8b85d5",
@@ -48,5 +52,18 @@ public class HarvesterTest {
         testOutput = new File(testDir.getAbsolutePath() + "/output.txt");
 
         h.parseCommitHashes(testLog, testOutput);
+
+        testOutput = new File(testDir.getAbsolutePath() + "/output.txt");
+
+        try {
+            in = new Scanner(testOutput);
+            int i = 0;
+            while (in.hasNextLine()) {
+                assertEquals(commitHashes[(commitHashes.length - 1) - i++],
+                        in.nextLine());
+            }
+        } finally {
+            in.close();
+        }
     }
 }
