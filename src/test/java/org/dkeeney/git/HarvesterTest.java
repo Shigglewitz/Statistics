@@ -1,4 +1,4 @@
-package org.dkeeney.git.statistics;
+package org.dkeeney.git;
 
 import static org.junit.Assert.assertEquals;
 
