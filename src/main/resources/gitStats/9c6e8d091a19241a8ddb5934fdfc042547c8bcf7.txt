@@ -8,11 +8,11 @@
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ graphing ---
 [debug] execute contextualize
 [WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
-[INFO] skip non existing resourceDirectory C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\resources
+[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\resources
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ graphing ---
 [WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
-[INFO] Compiling 13 source files to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\classes
+[INFO] Compiling 20 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\classes
 [INFO] 
 [INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ graphing ---
 [debug] execute contextualize
@@ -21,22 +21,22 @@
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:testCompile (default-testCompile) @ graphing ---
 [WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
-[INFO] Compiling 2 source files to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\test-classes
+[INFO] Compiling 6 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\test-classes
 [INFO] 
 [INFO] --- maven-surefire-plugin:2.10:test (default-test) @ graphing ---
-[INFO] Surefire report directory: C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports
+[INFO] Surefire report directory: D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports
 
 -------------------------------------------------------
  T E S T S
 -------------------------------------------------------
 Running org.dkeeney.graphing.ColorGrapherTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.581 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.591 sec
 Running org.dkeeney.graphing.equations.EquationTest
-Tests run: 18, Failures: 5, Errors: 2, Skipped: 2, Time elapsed: 0.185 sec <<< FAILURE!
+Tests run: 18, Failures: 5, Errors: 2, Skipped: 2, Time elapsed: 0.153 sec <<< FAILURE!
 Running org.dkeeney.graphing.GrapherTest
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.078 sec <<< FAILURE!
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.05 sec <<< FAILURE!
 Running org.dkeeney.graphing.ImageMakerTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.176 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.136 sec
 Running org.dkeeney.utils.ColorUtilsTest
 Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running org.dkeeney.utils.UtilsTest
@@ -60,17 +60,17 @@ Tests run: 34, Failures: 6, Errors: 2, Skipped: 2
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 5.452s
-[INFO] Finished at: Sat Feb 01 16:18:19 SGT 2014
+[INFO] Total time: 5.690s
+[INFO] Finished at: Sun Feb 02 15:53:05 SGT 2014
 [INFO] Final Memory: 16M/182M
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.10:test (default-test) on project graphing: There are test failures.
 [ERROR] 
-[ERROR] Please refer to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports for the individual test results.
+[ERROR] Please refer to D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports for the individual test results.
 [ERROR] -> [Help 1]
 org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.10:test (default-test) on project graphing: There are test failures.
 
-Please refer to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports for the individual test results.
+Please refer to D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports for the individual test results.
 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:213)
 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
@@ -93,7 +93,7 @@ Please refer to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\wo
 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:352)
 Caused by: org.apache.maven.plugin.MojoFailureException: There are test failures.
 
-Please refer to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports for the individual test results.
+Please refer to D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports for the individual test results.
 	at org.apache.maven.plugin.surefire.SurefireHelper.reportExecution(SurefireHelper.java:87)
 	at org.apache.maven.plugin.surefire.SurefirePlugin.writeSummary(SurefirePlugin.java:641)
 	at org.apache.maven.plugin.surefire.SurefirePlugin.handleSummary(SurefirePlugin.java:615)

@@ -1,3 +1,9 @@
+commit d72353f39bb0505483e133362743fc7d0d816343
+Author: Shigglewitz <shigglewitz@gmail.com>
+Date:   Sun Feb 2 11:09:55 2014 +0800
+
+    Empty files to force git to track directories
+
 commit a67d6d293e1eec8e94d198c590eade1e5fe14a1f
 Author: Shigglewitz <shigglewitz@gmail.com>
 Date:   Fri Jan 31 23:28:07 2014 +0800

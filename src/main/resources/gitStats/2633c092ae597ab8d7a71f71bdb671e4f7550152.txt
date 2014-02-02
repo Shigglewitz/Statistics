@@ -19,16 +19,16 @@
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ equations ---
 [debug] execute contextualize
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\src\main\resources
+[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\src\main\resources
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ equations ---
-[INFO] Compiling 21 source files to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\target\classes
+[INFO] Compiling 21 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\target\classes
 [INFO] -------------------------------------------------------------
 [ERROR] COMPILATION ERROR : 
 [INFO] -------------------------------------------------------------
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\src\main\java\org\dkeeney\graphing\equations\Equation.java:[27,24] error: package org.dkeeney.utils does not exist
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\src\main\java\org\dkeeney\graphing\equations\Equation.java:[27,24] error: package org.dkeeney.utils does not exist
 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\src\main\java\org\dkeeney\graphing\equations\Equation.java:[61,16] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\src\main\java\org\dkeeney\graphing\equations\Equation.java:[61,16] error: cannot find symbol
 
 [INFO] 2 errors 
 [INFO] -------------------------------------------------------------
@@ -36,20 +36,20 @@
 [INFO] Reactor Summary:
 [INFO] 
 [INFO] DKeeney Projects .................................. SUCCESS [0.003s]
-[INFO] Equations ......................................... FAILURE [2.195s]
+[INFO] Equations ......................................... FAILURE [2.322s]
 [INFO] Graphing .......................................... SKIPPED
 [INFO] Utilities ......................................... SKIPPED
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 2.402s
-[INFO] Finished at: Sat Feb 01 16:21:32 SGT 2014
+[INFO] Total time: 2.530s
+[INFO] Finished at: Sun Feb 02 15:58:05 SGT 2014
 [INFO] Final Memory: 10M/109M
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.1:compile (default-compile) on project equations: Compilation failure: Compilation failure:
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\src\main\java\org\dkeeney\graphing\equations\Equation.java:[27,24] error: package org.dkeeney.utils does not exist
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\src\main\java\org\dkeeney\graphing\equations\Equation.java:[27,24] error: package org.dkeeney.utils does not exist
 [ERROR] 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\src\main\java\org\dkeeney\graphing\equations\Equation.java:[61,16] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\src\main\java\org\dkeeney\graphing\equations\Equation.java:[61,16] error: cannot find symbol
 [ERROR] -> [Help 1]
 org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.1:compile (default-compile) on project equations: Compilation failure
 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:213)

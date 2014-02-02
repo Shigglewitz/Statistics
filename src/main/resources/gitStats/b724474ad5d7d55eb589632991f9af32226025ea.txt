@@ -8,63 +8,32 @@
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ graphing ---
 [debug] execute contextualize
 [WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
-[INFO] skip non existing resourceDirectory C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\resources
+[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\resources
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ graphing ---
 [WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
-[INFO] Compiling 13 source files to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\classes
-[INFO] 
-[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ graphing ---
-[debug] execute contextualize
-[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
-[INFO] Copying 5 resources
-[INFO] 
-[INFO] --- maven-compiler-plugin:2.1:testCompile (default-testCompile) @ graphing ---
-[WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
-[INFO] Compiling 1 source file to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\test-classes
-[INFO] 
-[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ graphing ---
-[INFO] Surefire report directory: C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports
+[INFO] Compiling 22 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\Grapher.java:[43,44] error: unreported exception InvalidEquationException; must be caught or declared to be thrown
 
--------------------------------------------------------
- T E S T S
--------------------------------------------------------
-Running org.dkeeney.graphing.ColorGrapherTest
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.115 sec <<< FAILURE!
-Running org.dkeeney.graphing.equations.EquationTest
-Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
-Running org.dkeeney.graphing.GrapherTest
-Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.018 sec <<< FAILURE!
-Running org.dkeeney.graphing.ImageMakerTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.275 sec
-Running org.dkeeney.utils.ColorUtilsTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
-Running org.dkeeney.utils.UtilsTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
-
-Results :
-
-Tests in error: 
-  testGetGraph(org.dkeeney.graphing.ColorGrapherTest): Unable to parse all of x
-  testGetGraph(org.dkeeney.graphing.GrapherTest): Could not parse part of x^2
-  testCalculateValues(org.dkeeney.graphing.GrapherTest): Could not parse part of x^2
-
-Tests run: 33, Failures: 0, Errors: 3, Skipped: 0
-
+[INFO] 1error
+[INFO] -------------------------------------------------------------
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 5.003s
-[INFO] Finished at: Sat Feb 01 16:18:47 SGT 2014
-[INFO] Final Memory: 16M/182M
+[INFO] Total time: 2.750s
+[INFO] Finished at: Sun Feb 02 15:53:42 SGT 2014
+[INFO] Final Memory: 10M/109M
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.10:test (default-test) on project graphing: There are test failures.
-[ERROR] 
-[ERROR] Please refer to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports for the individual test results.
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.1:compile (default-compile) on project graphing: Compilation failure
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\Grapher.java:[43,44] error: unreported exception InvalidEquationException; must be caught or declared to be thrown
 [ERROR] -> [Help 1]
-org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.10:test (default-test) on project graphing: There are test failures.
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.1:compile (default-compile) on project graphing: Compilation failure
+\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\Grapher.java:[43,44] error: unreported exception InvalidEquationException; must be caught or declared to be thrown
 
-Please refer to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports for the individual test results.
+
 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:213)
 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
@@ -85,14 +54,12 @@ Please refer to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\wo
 	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:230)
 	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:409)
 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:352)
-Caused by: org.apache.maven.plugin.MojoFailureException: There are test failures.
+Caused by: org.apache.maven.plugin.CompilationFailureException: Compilation failure
+\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\Grapher.java:[43,44] error: unreported exception InvalidEquationException; must be caught or declared to be thrown
 
-Please refer to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports for the individual test results.
-	at org.apache.maven.plugin.surefire.SurefireHelper.reportExecution(SurefireHelper.java:87)
-	at org.apache.maven.plugin.surefire.SurefirePlugin.writeSummary(SurefirePlugin.java:641)
-	at org.apache.maven.plugin.surefire.SurefirePlugin.handleSummary(SurefirePlugin.java:615)
-	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:137)
-	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:98)
+
+	at org.apache.maven.plugin.AbstractCompilerMojo.execute(AbstractCompilerMojo.java:613)
+	at org.apache.maven.plugin.CompilerMojo.execute(CompilerMojo.java:116)
 	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:101)
 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:209)
 	... 19 more

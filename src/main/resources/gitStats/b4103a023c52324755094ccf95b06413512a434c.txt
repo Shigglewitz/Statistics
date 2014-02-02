@@ -8,11 +8,11 @@
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ graphing ---
 [debug] execute contextualize
 [WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
-[INFO] skip non existing resourceDirectory C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\resources
+[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\resources
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ graphing ---
 [WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
-[INFO] Compiling 3 source files to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\classes
+[INFO] Compiling 12 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\classes
 [INFO] 
 [INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ graphing ---
 [debug] execute contextualize
@@ -21,10 +21,10 @@
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:testCompile (default-testCompile) @ graphing ---
 [WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
-[INFO] Compiling 2 source files to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\test-classes
+[INFO] Compiling 2 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\test-classes
 [INFO] 
 [INFO] --- maven-surefire-plugin:2.10:test (default-test) @ graphing ---
-[INFO] Surefire report directory: C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports
+[INFO] Surefire report directory: D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports
 
 -------------------------------------------------------
  T E S T S
@@ -49,11 +49,11 @@ Equation for 1+2*3
 Equation for 1+3^3+1*4
 Equation for 0/4+1*3
 Equation for 1*30+45+67*89*56*12
-Tests run: 10, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.128 sec <<< FAILURE!
+Tests run: 10, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.126 sec <<< FAILURE!
 Running org.dkeeney.utils.UtilsTest
 (456
 [123[456[789]]asdf[456]
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec
 
 Results :
 
@@ -65,17 +65,17 @@ Tests run: 15, Failures: 0, Errors: 1, Skipped: 0
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 4.377s
-[INFO] Finished at: Sat Feb 01 16:14:42 SGT 2014
+[INFO] Total time: 4.306s
+[INFO] Finished at: Sun Feb 02 15:48:07 SGT 2014
 [INFO] Final Memory: 16M/182M
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.10:test (default-test) on project graphing: There are test failures.
 [ERROR] 
-[ERROR] Please refer to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports for the individual test results.
+[ERROR] Please refer to D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports for the individual test results.
 [ERROR] -> [Help 1]
 org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.10:test (default-test) on project graphing: There are test failures.
 
-Please refer to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports for the individual test results.
+Please refer to D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports for the individual test results.
 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:213)
 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
@@ -98,7 +98,7 @@ Please refer to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\wo
 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:352)
 Caused by: org.apache.maven.plugin.MojoFailureException: There are test failures.
 
-Please refer to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports for the individual test results.
+Please refer to D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports for the individual test results.
 	at org.apache.maven.plugin.surefire.SurefireHelper.reportExecution(SurefireHelper.java:87)
 	at org.apache.maven.plugin.surefire.SurefirePlugin.writeSummary(SurefirePlugin.java:641)
 	at org.apache.maven.plugin.surefire.SurefirePlugin.handleSummary(SurefirePlugin.java:615)
