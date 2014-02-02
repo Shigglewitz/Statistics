@@ -10,6 +10,7 @@ public class Module {
     private int testsFailed;
     private int testsError;
     private int testsSkipped;
+    private String version;
     private final List<TestContainer> tests;
 
     public Module(String name) {
@@ -63,5 +64,13 @@ public class Module {
 
     public int getTestsSkipped() {
         return this.testsSkipped;
+    }
+
+    public String getVersion() {
+        return this.version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
     }
 }

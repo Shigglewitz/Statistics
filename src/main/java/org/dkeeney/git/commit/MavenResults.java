@@ -22,7 +22,10 @@ public class MavenResults {
     private static final String MAVEN_SEPARATOR = "[INFO] ------------------------------------------------------------------------";
     private static final String BUILD_ORDER_START = "[INFO] Reactor Build Order:";
     private static final String BUILD_ORDER_LISTING_REGEX = "\\[INFO\\] [^\\s].+";
+    private static final String PROJECT_START = "[INFO] Building ";
     private static final String PROJECT_START_REGEX = "\\[INFO\\] Building .+";
+    private static final Pattern PROJECT_START_PATTERN = Pattern
+            .compile("\\[INFO\\] Building (.*) (.*)$");
     private static final String TEST_START = " T E S T S";
     private static final String TEST_RUNNING_REGEX = "Running [^\\s]+";
     private static final String TEST_RESULT_REGEX = "Tests run: ([\\d]+), "
@@ -68,6 +71,16 @@ public class MavenResults {
                         // get past the blank line
                         in.nextLine();
                         searchState = ParseState.PARSE_BUILD_ORDER;
+                    } else if (announcementIncoming
+                            && line.matches(PROJECT_START_REGEX)) {
+                        searchState = ParseState.FIND_TESTS;
+                        currentModule++;
+                        matcher = PROJECT_START_PATTERN.matcher(line);
+                        if (matcher.find()) {
+                            this.modules.add(new Module(matcher.group(1)));
+                            this.modules.get(currentModule).setVersion(
+                                    matcher.group(2));
+                        }
                     }
                     break;
                 case PARSE_BUILD_ORDER:
@@ -83,6 +96,12 @@ public class MavenResults {
                         if (line.matches(PROJECT_START_REGEX)) {
                             searchState = ParseState.FIND_TESTS;
                             currentModule++;
+                            this.modules
+                                    .get(currentModule)
+                                    .setVersion(
+                                            line.substring((PROJECT_START + this.modules
+                                                    .get(currentModule)
+                                                    .getName()).length() + 1));
                         } else if (line.equals(REACTOR_SUMMARY)) {
                             searchState = ParseState.PARSE_SUMMARY;
                         }
@@ -92,6 +111,12 @@ public class MavenResults {
                     if (announcementIncoming
                             && line.matches(PROJECT_START_REGEX)) {
                         currentModule++;
+                        this.modules
+                                .get(currentModule)
+                                .setVersion(
+                                        line.substring((PROJECT_START + this.modules
+                                                .get(currentModule).getName())
+                                                .length() + 1));
                     } else if (line.equals(TEST_START)) {
                         searchState = ParseState.FIND_TEST_RUN;
                         currentTest = -1;
