@@ -47,3 +47,8 @@ Thumbs.db
 target/
 Servers/
 /target
+
+#these files get modified a lot for each test run, so ignore them
+#specifying the files explicitly so the .gitignore will still be there and new checkouts will have this folder
+src/main/resources/gitCommits/commits.txt
+src/main/resources/gitCommits/gitlog.txt

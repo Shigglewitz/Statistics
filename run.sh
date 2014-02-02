@@ -1,23 +1,69 @@
 #!/bin/bash
 
+usage() 
+{
+cat << EOF
+usage: $0 options
+
+This script parses commit histories
+
+OPTIONS:
+   -h      Show this message
+   -c      Clean previous stat logs
+   -l      Limit the number of commits to evaluate
+   -v      Verbose
+EOF
+}
+
+CLEAN=
+# default
+LIMIT=10
+VERBOSE=
+while getopts “hcl:v” OPTION
+do
+     case $OPTION in
+         h)
+             usage
+             exit 1
+             ;;
+         c)
+             CLEAN=1
+             ;;
+         l)
+             LIMIT=$OPTARG
+             re='^[0-9]+$'
+             if ! [[ $LIMIT =~ $re ]] ; then
+                 echo "error: Not a number" >&2;
+                 usage
+                 exit 1
+             fi
+             ;;
+         v)
+             VERBOSE=1
+             ;;
+         ?)
+             usage
+             exit
+             ;;
+     esac
+done
+
 # abort on the first failure
 set -e
 
-echo --------------
+if [ 1 -eq $VERBOSE ]; then
+    # become verbose
+    set -v
+fi
+
+
+# --------------
 # Absolute path to this script, e.g. /home/user/bin/foo.sh
 SCRIPT=$(readlink -f "$0")
 # Absolute path this script is in, thus /home/user/bin
 SCRIPTPATH=$(dirname "$SCRIPT")
-echo script is located in: $SCRIPTPATH
-echo --------------
-
-# determine if the user requested the clean operation
-clean=0;
-if [ $# -ne 0 ]; then
-    if [ "$1" == "clean" ]; then
-        clean=1;
-    fi
-fi
+# script is located in: $SCRIPTPATH
+# --------------
 
 # this script needs to work from one level above the statistics folder
 cd $SCRIPTPATH
@@ -34,19 +80,19 @@ gitStatsDir=$gitBaseDir/gitStats
 gitCloneDir=$baseDir/statistics/target/clone
 
 # echo directory vars
-echo baseDir = $baseDir
-echo repositoryDir = $repositoryDir
-echo gitBaseDir = $baseDir/statistics/src/main/resources
-echo gitCommitsDir = $gitBaseDir/gitCommits
-echo gitStatsDir = $gitBaseDir/gitStats
-echo gitCloneDir = $baseDir/statistics/target/clone
+# baseDir = $baseDir
+# repositoryDir = $repositoryDir
+# gitBaseDir = $baseDir/statistics/src/main/resources
+# gitCommitsDir = $gitBaseDir/gitCommits
+# gitStatsDir = $gitBaseDir/gitStats
+# gitCloneDir = $baseDir/statistics/target/clone
 
 # clean the commit dir
 rm -rf $gitCommitsDir
 mkdir $gitCommitsDir
 
 # clean old stats
-if [ $clean == 1 ]; then
+if [ $CLEAN == 1 ]; then
     mvn clean
     rm -rf $gitStatsDir
 fi
@@ -55,11 +101,8 @@ if [ ! -d "$gitStatsDir" ]; then
   mkdir $gitStatsDir
 fi 
 
-# become verbose
-set -v
-
 # store git log to a text file 
-git log > $gitCommitsDir/gitlog.txt
+git log -$LIMIT > $gitCommitsDir/gitlog.txt
 
 # compile statistics project
 mvn clean compile -pl statistics -am -e
@@ -79,7 +122,7 @@ cd workspace
 
 pwd
 # this monster command gets the first commit message, extracts the hash, and checks it out
-git log --pretty=oneline  | tail -1 | sed -r 's/^([0-9a-f]{40}).*/\1/' | xargs git checkout
+git log --pretty=oneline -$LIMIT | tail -1 | sed -r 's/^([0-9a-f]{40}).*/\1/' | xargs git checkout
 
 # the previous commits didn't have all the folders needed
 mkdir -p org.dkeeney/utils/src/test/resources/rendered
@@ -102,7 +145,10 @@ fi
 done < $gitCommitsDir/commits.txt
 
 set -e
-set -v
+
+if [ 1 -eq $VERBOSE ]; then
+    set -v
+fi
 
 # clean up the git clone
 cd $baseDir
