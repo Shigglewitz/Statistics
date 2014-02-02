@@ -6,11 +6,15 @@ import java.util.List;
 
 public class Module {
     private final String name;
-    private final int testsRun;
-    private final int testsFailed;
-    private final int testsError;
-    private final int testsSkipped;
+    private int testsRun;
+    private int testsFailed;
+    private int testsError;
+    private int testsSkipped;
     private final List<TestContainer> tests;
+
+    public Module(String name) {
+        this(name, 0, 0, 0, 0);
+    }
 
     public Module(String name, int testsRun, int testsFailed, int testsError,
             int testsSkipped) {
@@ -32,6 +36,13 @@ public class Module {
 
     public List<TestContainer> getTestContainers() {
         return Collections.unmodifiableList(this.tests);
+    }
+
+    public void update(int run, int failed, int error, int skipped) {
+        this.testsRun = run;
+        this.testsFailed = failed;
+        this.testsError = error;
+        this.testsSkipped = skipped;
     }
 
     public String getName() {

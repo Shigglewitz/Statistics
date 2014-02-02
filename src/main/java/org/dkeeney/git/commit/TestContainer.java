@@ -2,11 +2,15 @@ package org.dkeeney.git.commit;
 
 public class TestContainer {
     private final String name;
-    private final int testsRun;
-    private final int testsFailed;
-    private final int testsError;
-    private final int testsSkipped;
-    private final String timeElapsed;
+    private int testsRun;
+    private int testsFailed;
+    private int testsError;
+    private int testsSkipped;
+    private String timeElapsed;
+
+    public TestContainer(String name) {
+        this(name, 0, 0, 0, 0, "");
+    }
 
     public TestContainer(String name, int testsRun, int testsFailed,
             int testsError, int testsSkipped, String timeElapsed) {
@@ -16,6 +20,15 @@ public class TestContainer {
         this.testsError = testsError;
         this.testsSkipped = testsSkipped;
         this.timeElapsed = timeElapsed;
+    }
+
+    public void update(int run, int failed, int error, int skipped,
+            String elapsed) {
+        this.testsRun = run;
+        this.testsFailed = failed;
+        this.testsError = error;
+        this.testsSkipped = skipped;
+        this.timeElapsed = elapsed;
     }
 
     public String getName() {
