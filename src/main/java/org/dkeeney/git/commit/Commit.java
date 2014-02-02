@@ -1,10 +1,12 @@
 package org.dkeeney.git.commit;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
 public class Commit {
+    private final List<Module> modules;
     private final String hash;
     private String author;
     private String merge;
@@ -13,7 +15,16 @@ public class Commit {
 
     public Commit(String hash) {
         this.hash = hash;
+        this.modules = new ArrayList<Module>();
         this.comments = "";
+    }
+
+    public void addModule(Module modules) {
+        this.modules.add(modules);
+    }
+
+    public List<Module> getModules() {
+        return Collections.unmodifiableList(this.modules);
     }
 
     public String getAuthor() {

@@ -75,6 +75,24 @@ public class Parser {
         return commitHistory;
     }
 
+    public void loadCommitData(Commit commit) {
+        this.loadCommitData(commit, "gitStats/");
+    }
+
+    public void loadCommitData(Commit commit, String folder) {
+        File logFile = new File(testDir.getAbsolutePath() + "/" + folder
+                + commit.getHash() + ".txt");
+        Scanner in = null;
+
+        try {
+            in = new Scanner(logFile);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            in.close();
+        }
+    }
+
     public Date parseDate(String date) {
         try {
             return SDF.parse(date);

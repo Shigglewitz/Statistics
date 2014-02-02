@@ -1,0 +1,224 @@
+[INFO] Error stacktraces are turned on.
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] DKeeney Projects
+[INFO] Common Config
+[INFO] Test Utils
+[INFO] Utilities
+[INFO] Equations
+[INFO] Graphing
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building DKeeney Projects 1.0.0
+[INFO] ------------------------------------------------------------------------
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Common Config 1.0.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ config ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\config\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ config ---
+[INFO] Compiling 1 source file to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\config\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ config ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\config\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.1:testCompile (default-testCompile) @ config ---
+[INFO] Compiling 1 source file to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\config\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ config ---
+[INFO] Surefire report directory: D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\config\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.dkeeney.config.ConstantsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.3.2:jar (default-jar) @ config ---
+[INFO] Building jar: D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\config\target\config-1.0.0.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Test Utils 1.0.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ test-utils ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\test-utils\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ test-utils ---
+[INFO] Compiling 1 source file to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\test-utils\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ test-utils ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\test-utils\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.1:testCompile (default-testCompile) @ test-utils ---
+[INFO] Compiling 2 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\test-utils\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ test-utils ---
+[INFO] Surefire report directory: D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\test-utils\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running ork.dkeeney.testutils.ImageComparisonTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 sec
+
+Results :
+
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.3.2:jar (default-jar) @ test-utils ---
+[INFO] Building jar: D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\test-utils\target\test-utils-1.0.0.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Utilities 1.0.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ utils ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\utils\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ utils ---
+[INFO] Compiling 3 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\utils\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ utils ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.1:testCompile (default-testCompile) @ utils ---
+[INFO] Compiling 3 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\utils\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ utils ---
+[INFO] Surefire report directory: D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\utils\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.dkeeney.utils.ColorUtilsTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.098 sec
+Running org.dkeeney.utils.ImageMakerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.366 sec
+Running org.dkeeney.utils.UtilsTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+
+Results :
+
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.3.2:jar (default-jar) @ utils ---
+[INFO] Building jar: D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\utils\target\utils-1.0.0.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Equations 1.0.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ equations ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ equations ---
+[INFO] Compiling 21 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ equations ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.1:testCompile (default-testCompile) @ equations ---
+[INFO] Compiling 2 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ equations ---
+[INFO] Surefire report directory: D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.dkeeney.equations.EquationTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.185 sec
+Running org.dkeeney.equations.OperationTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
+
+Results :
+
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.3.2:jar (default-jar) @ equations ---
+[INFO] Building jar: D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\target\equations-1.0.0.jar
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Graphing 1.0.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ graphing ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\graphing\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ graphing ---
+[INFO] Compiling 3 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\graphing\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ graphing ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.1:testCompile (default-testCompile) @ graphing ---
+[INFO] Compiling 2 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\graphing\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ graphing ---
+[INFO] Surefire report directory: D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\graphing\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.dkeeney.graphing.ColorGrapherTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 2.163 sec
+Running org.dkeeney.graphing.GrapherTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.21 sec
+
+Results :
+
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 1
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.3.2:jar (default-jar) @ graphing ---
+[INFO] Building jar: D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\graphing\target\graphing-1.0.0.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] DKeeney Projects .................................. SUCCESS [0.003s]
+[INFO] Common Config ..................................... SUCCESS [3.537s]
+[INFO] Test Utils ........................................ SUCCESS [1.565s]
+[INFO] Utilities ......................................... SUCCESS [2.059s]
+[INFO] Equations ......................................... SUCCESS [2.741s]
+[INFO] Graphing .......................................... SUCCESS [4.854s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 14.981s
+[INFO] Finished at: Sun Feb 02 16:00:42 SGT 2014
+[INFO] Final Memory: 39M/240M
+[INFO] ------------------------------------------------------------------------
