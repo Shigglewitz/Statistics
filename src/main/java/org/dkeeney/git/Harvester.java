@@ -7,17 +7,16 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Statistics {
-    public static void main(String[] args) throws IOException {
-        File gitLog = new File("statistics/src/main/resources/git/gitlog.txt");
-        File commitsFile = new File(
-                "statistics/src/main/resources/git/commits.txt");
-        Scanner in = new Scanner(gitLog);
+public class Harvester {
+    public Harvester() {
+    }
+
+    public void parseCommitHashes(File logFile, File output) throws IOException {
+        Scanner in = new Scanner(logFile);
         Stack<String> commits = new Stack<>();
         String nextLine;
         StringBuilder commitsTxt = new StringBuilder();
         BufferedWriter writer = null;
-        System.out.println("sup");
         try {
             while (in.hasNextLine()) {
                 nextLine = in.nextLine();
@@ -28,11 +27,20 @@ public class Statistics {
             while (commits.size() > 0) {
                 commitsTxt.append(String.format(commits.pop() + "%n"));
             }
-            writer = new BufferedWriter(new FileWriter(commitsFile));
+            writer = new BufferedWriter(new FileWriter(output));
             writer.write(commitsTxt.toString());
         } finally {
             in.close();
             writer.close();
         }
+    }
+
+    public static void main(String[] args) throws IOException {
+        File gitLog = new File(
+                "statistics/src/main/resources/gitCommits/gitlog.txt");
+        File commitsFile = new File(
+                "statistics/src/main/resources/gitCommits/commits.txt");
+        Harvester harvester = new Harvester();
+        harvester.parseCommitHashes(gitLog, commitsFile);
     }
 }
