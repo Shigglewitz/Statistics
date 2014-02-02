@@ -78,11 +78,17 @@ git clone $repositoryDir
 cd workspace
 
 pwd
+# this monster command gets the first commit message, extracts the hash, and checks it out
+git log --pretty=oneline  | tail -1 | sed -r 's/^([0-9a-f]{40}).*/\1/' | xargs git checkout
 
 # the previous commits didn't have all the folders needed
 mkdir -p org.dkeeney/utils/src/test/resources/rendered
 mkdir -p org.dkeeney/graphing/src/test/resources/rendered
 mkdir -p graphing/src/test/resources/rendered
+
+# while loop produces lots of output so hide it
+set +v 
+set +e
 
 while read line
 do 
@@ -91,8 +97,12 @@ if [ ! -f $gitStatsDir/$commit.txt ]; then
     echo $commit.txt not found
     git checkout $commit
     mvn package -f */pom.xml -e > $gitStatsDir/$commit.txt
+    mvn clean -q -f */pom.xml
 fi
 done < $gitCommitsDir/commits.txt
+
+set -e
+set -v
 
 # clean up the git clone
 cd $baseDir
