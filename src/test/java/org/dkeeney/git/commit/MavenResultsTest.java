@@ -1,6 +1,7 @@
 package org.dkeeney.git.commit;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -42,6 +43,8 @@ public class MavenResultsTest {
                 .getTestsError());
         assertEquals("Wrong amount of time elapsed", "0.055 sec", tests.get(0)
                 .getTimeElapsed());
+        assertFalse("Test class should not have failed", tests.get(0)
+                .isFailed());
 
         m = modules.get(3);
         tests = m.getTestContainers();
@@ -51,6 +54,10 @@ public class MavenResultsTest {
                 "org.dkeeney.utils.ImageMakerTest", tests.get(1).getName());
         assertEquals("Wrong test class name.", "org.dkeeney.utils.UtilsTest",
                 tests.get(2).getName());
+        assertFalse("Test class should not have failed", tests.get(0)
+                .isFailed());
+        assertFalse("Test class should not have failed", tests.get(1)
+                .isFailed());
         assertEquals("Wrong number of tests ran", 4, tests.get(0).getTestsRun());
         assertEquals("Wrong number of tests ran", 3, tests.get(1).getTestsRun());
         assertEquals("Wrong number of tests ran", 6, tests.get(2).getTestsRun());
@@ -85,9 +92,13 @@ public class MavenResultsTest {
         assertEquals("Wrong number of tests ran", 7, tests.get(0).getTestsRun());
         assertEquals("Wrong test class", "org.dkeeney.utils.UtilsTest", tests
                 .get(1).getName());
+        assertFalse("Test class should not have failed", tests.get(0)
+                .isFailed());
         assertEquals("Wrong number of tests ran", 4, tests.get(1).getTestsRun());
         assertEquals("Wrong time elapsed", "0 sec", tests.get(1)
                 .getTimeElapsed());
+        assertFalse("Test class should not have failed", tests.get(1)
+                .isFailed());
         assertEquals("Wrong total number of tests ran", 11, m.getTestsRun());
 
         assertEquals("Wrong outcome", MavenResults.Outcome.SUCCESS, c
@@ -110,5 +121,48 @@ public class MavenResultsTest {
                                 "org.apache.maven.project.ProjectBuildingException"));
         assertNotNull("Did not initialize module list", modules);
         assertEquals("Should not have found any modules", 0, modules.size());
+    }
+
+    @Test
+    public void testLoadMavenResultsWithTestFailure() {
+        Commit c = new Commit("b4103a023c52324755094ccf95b06413512a434c");
+        c.loadCommitData(STATS_FOLDER);
+        List<Module> modules = c.getMavenResults().getModules();
+        String moduleName = "Graphing";
+        List<TestContainer> tests = null;
+        Module m = null;
+
+        assertNotNull("No modules found", modules);
+        assertEquals("Wrong number of modules found", 1, modules.size());
+
+        m = modules.get(0);
+        assertEquals("Wrong module name", moduleName, modules.get(0).getName());
+        tests = m.getTestContainers();
+        assertEquals("Wrong test class name",
+                "org.dkeeney.graphing.equations.EquationTest", tests.get(0)
+                        .getName());
+        assertEquals("Wrong number of tests run", 10, tests.get(0)
+                .getTestsRun());
+        assertEquals("Wrong number of tests in error", 1, tests.get(0)
+                .getTestsError());
+        assertTrue("Test class should have failed", tests.get(0).isFailed());
+        assertEquals("Wrong test class name", "org.dkeeney.utils.UtilsTest",
+                tests.get(1).getName());
+        assertEquals("Wrong number of tests run", 5, tests.get(1).getTestsRun());
+        assertEquals("Wrong number of tests in error", 0, tests.get(1)
+                .getTestsError());
+        assertFalse("Test class should not have failed", tests.get(1)
+                .isFailed());
+
+        assertEquals("Wrong failure reason",
+                "Tests in error: " + System.lineSeparator(),
+                m.getFailureReason());
+        assertEquals("Wrong number of test failures", 1, tests.get(0)
+                .getFailedTests().size());
+        assertEquals("Wrong test failure", "testEquationsWithParens", tests
+                .get(0).getFailedTests().get(0));
+
+        assertEquals("Wrong outcome", MavenResults.Outcome.FAILURE, c
+                .getMavenResults().getOutcome());
     }
 }

@@ -12,6 +12,7 @@ public class Module {
     private int testsSkipped;
     private String version;
     private final List<TestContainer> tests;
+    private String failureReason;
 
     public Module(String name) {
         this(name, 0, 0, 0, 0);
@@ -25,10 +26,19 @@ public class Module {
         this.testsError = testsError;
         this.testsSkipped = testsSkipped;
         this.tests = new ArrayList<>();
+        this.failureReason = "";
     }
 
     public boolean successfulBuild() {
         return this.testsFailed == 0 && this.testsError == 0;
+    }
+
+    public void addFailedTest(String testMethod, String testClass) {
+        for (TestContainer t : this.tests) {
+            if (testClass.equals(t.getName())) {
+                t.addFailedTest(testMethod);
+            }
+        }
     }
 
     public void addTestContainer(TestContainer testContainer) {
@@ -44,6 +54,15 @@ public class Module {
         this.testsFailed = failed;
         this.testsError = error;
         this.testsSkipped = skipped;
+    }
+
+    public void addFailureReason(String reason) {
+        this.failureReason = this.failureReason + reason
+                + System.lineSeparator();
+    }
+
+    public String getFailureReason() {
+        return this.failureReason;
     }
 
     public String getName() {

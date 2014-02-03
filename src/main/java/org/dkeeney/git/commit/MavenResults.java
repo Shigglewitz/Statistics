@@ -18,11 +18,11 @@ public class MavenResults {
     private String failureReason;
 
     private enum ParseState {
-        FIND_BUILD_ORDER, PARSE_BUILD_ORDER, FIND_PROJECT_START, FIND_TESTS, FIND_TEST_RUN, FIND_TEST_RESULT, FIND_PROJECT_RESULT, PARSE_SUMMARY
+        FIND_BUILD_ORDER, PARSE_BUILD_ORDER, FIND_PROJECT_START, FIND_TESTS, FIND_TEST_RUN, FIND_TEST_RESULT, FIND_PROJECT_RESULT, PARSE_TEST_FAILURES, PARSE_SUMMARY
     }
 
     public enum Outcome {
-        SUCCESS, FAILED, ERROR
+        SUCCESS, FAILURE, ERROR
     }
 
     private static final String MAVEN_SEPARATOR = "[INFO] ------------------------------------------------------------------------";
@@ -36,10 +36,14 @@ public class MavenResults {
     private static final String TEST_RUNNING_REGEX = "Running [^\\s]+";
     private static final String TEST_RESULT_REGEX = "Tests run: ([\\d]+), "
             + "Failures: ([\\d]+), " + "Errors: ([\\d]+), "
-            + "Skipped: ([\\d]+), " + "Time elapsed: (.*)";
+            + "Skipped: ([\\d]+), " + "Time elapsed: (.+?)( <<< FAILURE!)?$";
     private static final Pattern TEST_RESULT_PATTERN = Pattern
             .compile(TEST_RESULT_REGEX);
     private static final String PROJECT_RESULTS = "Results :";
+    private static final String TESTS_IN_ERROR = "Tests in error: ";
+    private static final String TEST_ERROR_REGEX = "\\s+([^\\s(]+)\\(([^\\s)]+)\\):(.*)";
+    private static final Pattern TEST_ERROR_PATTERN = Pattern
+            .compile(TEST_ERROR_REGEX);
     private static final String PROJECT_RESULT_REGEX = "Tests run: ([\\d]+), "
             + "Failures: ([\\d]+), " + "Errors: ([\\d]+), "
             + "Skipped: ([\\d]+)";
@@ -157,7 +161,7 @@ public class MavenResults {
                                             Integer.parseInt(matcher.group(2)),
                                             Integer.parseInt(matcher.group(3)),
                                             Integer.parseInt(matcher.group(4)),
-                                            matcher.group(5));
+                                            matcher.group(5), matcher.group(6));
                         }
                         searchState = ParseState.FIND_TEST_RUN;
                     }
@@ -173,6 +177,20 @@ public class MavenResults {
                                     Integer.parseInt(matcher.group(4)));
                         }
                         searchState = ParseState.FIND_PROJECT_START;
+                    } else if (line.equals(TESTS_IN_ERROR)) {
+                        this.modules.get(currentModule).addFailureReason(line);
+                        searchState = ParseState.PARSE_TEST_FAILURES;
+                    }
+                    break;
+                case PARSE_TEST_FAILURES:
+                    if (line.matches(TEST_ERROR_REGEX)) {
+                        matcher = TEST_ERROR_PATTERN.matcher(line);
+                        if (matcher.find()) {
+                            this.modules.get(currentModule).addFailedTest(
+                                    matcher.group(1), matcher.group(2));
+                        }
+                    } else {
+                        searchState = ParseState.FIND_PROJECT_RESULT;
                     }
                     break;
                 case PARSE_SUMMARY:
