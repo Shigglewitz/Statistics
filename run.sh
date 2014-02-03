@@ -11,15 +11,15 @@ OPTIONS:
    -h      Show this message
    -c      Clean previous stat logs
    -l      Limit the number of commits to evaluate
-   -v      Verbose
+   -q      Non-verbose
 EOF
 }
 
 CLEAN=
 # default
 LIMIT=10
-VERBOSE=
-while getopts “hcl:v” OPTION
+VERBOSE=1
+while getopts “hcl:q” OPTION
 do
      case $OPTION in
          h)
@@ -38,8 +38,8 @@ do
                  exit 1
              fi
              ;;
-         v)
-             VERBOSE=1
+         q)
+             VERBOSE=0
              ;;
          ?)
              usage
