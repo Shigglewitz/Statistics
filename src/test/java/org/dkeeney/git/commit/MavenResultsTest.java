@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class MavenResultsTest {
@@ -30,6 +31,8 @@ public class MavenResultsTest {
                     modules.get(i).getName());
             assertEquals("Wrong version in module " + modules.get(i).getName(),
                     "1.0.0", modules.get(i).getVersion());
+            assertEquals("Wrong module outcome", Module.Outcome.SUCCESS,
+                    modules.get(i).getOutcome());
         }
 
         m = modules.get(1);
@@ -83,6 +86,8 @@ public class MavenResultsTest {
         assertEquals("Wrong name for module", moduleName, m.getName());
         assertEquals("Wrong version for module", "0.0.1-SNAPSHOT",
                 m.getVersion());
+        assertEquals("Wrong module outcome", Module.Outcome.SUCCESS,
+                m.getOutcome());
 
         tests = m.getTestContainers();
         assertEquals("Wrong number of test classes", 2, tests.size());
@@ -124,7 +129,7 @@ public class MavenResultsTest {
     }
 
     @Test
-    public void testLoadMavenResultsWithTestFailure() {
+    public void testLoadMavenResultsWithTestErrors() {
         Commit c = new Commit("b4103a023c52324755094ccf95b06413512a434c");
         c.loadCommitData(STATS_FOLDER);
         List<Module> modules = c.getMavenResults().getModules();
@@ -137,6 +142,8 @@ public class MavenResultsTest {
 
         m = modules.get(0);
         assertEquals("Wrong module name", moduleName, modules.get(0).getName());
+        assertEquals("Wrong module outcome", Module.Outcome.FAILURE,
+                m.getOutcome());
         tests = m.getTestContainers();
         assertEquals("Wrong test class name",
                 "org.dkeeney.graphing.equations.EquationTest", tests.get(0)
@@ -164,5 +171,73 @@ public class MavenResultsTest {
 
         assertEquals("Wrong outcome", MavenResults.Outcome.FAILURE, c
                 .getMavenResults().getOutcome());
+    }
+
+    @Test
+    public void testLoadMavenResultsWithCompilationErrors() {
+        Commit c = new Commit("cb43054eae782cb57d64b5f6532eefc764706789");
+        c.loadCommitData(STATS_FOLDER);
+        List<Module> modules = c.getMavenResults().getModules();
+        Module m = null;
+
+        m = modules.get(0);
+        assertEquals("Wrong module outcome", Module.Outcome.COMPILATION_ERROR,
+                m.getOutcome());
+        assertEquals(
+                "Wrong compilation failures",
+                "EquationTest.java:[128,28] error: non-static method mapVariables(String,Map<String,Double>) cannot be referenced from a static context"
+                        + System.lineSeparator()
+                        + "EquationTest.java:[142,24] error: non-static method mapVariables(String,Map<String,Double>) cannot be referenced from a static context"
+                        + System.lineSeparator(), m.getFailureReason());
+
+        assertEquals("Wrong outcome", MavenResults.Outcome.FAILURE, c
+                .getMavenResults().getOutcome());
+    }
+
+    @Test
+    public void testLoadMavenResultsWithCompilationErrorsAndReactor() {
+        Commit c = new Commit("2633c092ae597ab8d7a71f71bdb671e4f7550152");
+        c.loadCommitData(STATS_FOLDER);
+        List<Module> modules = c.getMavenResults().getModules();
+        Module m = null;
+        String[] moduleNames = { "DKeeney Projects", "Equations", "Graphing",
+                "Utilities" };
+
+        assertNotNull("Did not find any modules", modules);
+        assertEquals("Did not find the right amount of modules",
+                moduleNames.length, modules.size());
+        for (int i = 0; i > moduleNames.length; i++) {
+            assertEquals("Modules in incorrect order", moduleNames[i], modules
+                    .get(0).getName());
+        }
+
+        m = modules.get(0);
+        assertEquals("Wrong module outcome", Module.Outcome.SUCCESS,
+                m.getOutcome());
+        m = modules.get(1);
+        assertEquals("Wrong module outcome", Module.Outcome.COMPILATION_ERROR,
+                m.getOutcome());
+        assertEquals("Wrong failure reason",
+                "Equation.java:[27,24] error: package org.dkeeney.utils does not exist"
+                        + System.lineSeparator()
+                        + "Equation.java:[61,16] error: cannot find symbol"
+                        + System.lineSeparator(), m.getFailureReason());
+        m = modules.get(2);
+        assertEquals("Wrong module outcome", Module.Outcome.SKIPPED,
+                m.getOutcome());
+        m = modules.get(3);
+        assertEquals("Wrong module outcome", Module.Outcome.SKIPPED,
+                m.getOutcome());
+
+        assertEquals("Wrong outcome", MavenResults.Outcome.FAILURE, c
+                .getMavenResults().getOutcome());
+    }
+
+    @Ignore
+    @Test
+    public void testLoadMavenResultsWithTestFailuresAndErrors() {
+        Commit c = new Commit("9c6e8d091a19241a8ddb5934fdfc042547c8bcf7");
+        c.loadCommitData(STATS_FOLDER);
+        assertTrue(false);
     }
 }

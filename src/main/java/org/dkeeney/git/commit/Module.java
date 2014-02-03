@@ -13,6 +13,7 @@ public class Module {
     private String version;
     private final List<TestContainer> tests;
     private String failureReason;
+    private Outcome outcome;
 
     public Module(String name) {
         this(name, 0, 0, 0, 0);
@@ -27,6 +28,11 @@ public class Module {
         this.testsSkipped = testsSkipped;
         this.tests = new ArrayList<>();
         this.failureReason = "";
+        this.outcome = null;
+    }
+
+    public enum Outcome {
+        COMPILATION_ERROR, FAILURE, SUCCESS, SKIPPED
     }
 
     public boolean successfulBuild() {
@@ -91,5 +97,19 @@ public class Module {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public Outcome getOutcome() {
+        return this.outcome;
+    }
+
+    public void setOutcomeFromMavenString(String mavenLine) {
+        this.setOutcome(Outcome.valueOf(mavenLine.split(" ", 3)[2]));
+    }
+
+    public void setOutcome(Outcome outcome) {
+        if (this.outcome == null) {
+            this.outcome = outcome;
+        }
     }
 }

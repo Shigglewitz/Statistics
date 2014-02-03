@@ -34,6 +34,11 @@ public class Parser {
         }
     }
 
+    public List<Commit> parseCommitHistory() {
+        return this.parseCommitHistory(new File(testDir.getAbsolutePath()
+                + "/gitCommits/gitlog.txt"));
+    }
+
     public List<Commit> parseCommitHistory(File gitLog) {
         Scanner in = null;
         List<Commit> commitHistory = new ArrayList<>();
@@ -86,7 +91,13 @@ public class Parser {
 
     public static void main(String[] args) {
         Parser p = new Parser();
-        p.parseCommitHistory(new File(testDir.getAbsolutePath()
-                + "/gitCommits/gitlog.txt"));
+        List<Commit> commitHistory = p.parseCommitHistory();
+        for (Commit c : commitHistory) {
+            c.loadCommitData();
+            if (c.getMavenResults().getOutcome() == null) {
+                System.out.println(c.getHash());
+            }
+        }
+        System.out.println("Success");
     }
 }

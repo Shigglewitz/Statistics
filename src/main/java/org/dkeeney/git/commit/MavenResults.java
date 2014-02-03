@@ -18,7 +18,7 @@ public class MavenResults {
     private String failureReason;
 
     private enum ParseState {
-        FIND_BUILD_ORDER, PARSE_BUILD_ORDER, FIND_PROJECT_START, FIND_TESTS, FIND_TEST_RUN, FIND_TEST_RESULT, FIND_PROJECT_RESULT, PARSE_TEST_FAILURES, PARSE_SUMMARY
+        FIND_BUILD_ORDER, PARSE_BUILD_ORDER, FIND_PROJECT_START, FIND_TESTS, PARSE_COMPILATION_ERRORS, FIND_TEST_RUN, FIND_TEST_RESULT, FIND_PROJECT_RESULT, PARSE_TEST_FAILURES, PARSE_SUMMARY
     }
 
     public enum Outcome {
@@ -32,6 +32,12 @@ public class MavenResults {
     private static final String PROJECT_START_REGEX = "\\[INFO\\] Building .+";
     private static final Pattern PROJECT_START_PATTERN = Pattern
             .compile("\\[INFO\\] Building (.*) (.*)$");
+    private static final String COMPILATION_ERROR = "[ERROR] COMPILATION ERROR : ";
+    private static final String COMPILATION_ERROR_REGEX = "\\[ERROR\\].*?([a-zA-Z0-9_$]+\\.java:\\[[\\d]+,[\\d]+\\] error:.*)";
+    private static final Pattern COMPILATION_ERROR_PATTERN = Pattern
+            .compile(COMPILATION_ERROR_REGEX);
+    // maven is weird about white space on this line
+    private static final String COMPILATION_ERROR_SUMMATION_REGEX = "\\[INFO\\] [\\d]+[ ]?error[s]? ?";
     private static final String TEST_START = " T E S T S";
     private static final String TEST_RUNNING_REGEX = "Running [^\\s]+";
     private static final String TEST_RESULT_REGEX = "Tests run: ([\\d]+), "
@@ -50,6 +56,9 @@ public class MavenResults {
     private static final Pattern PROJECT_RESULT_PATTERN = Pattern
             .compile(PROJECT_RESULT_REGEX);
     private static final String REACTOR_SUMMARY = "[INFO] Reactor Summary:";
+    private static final String REACTOR_OUTCOME_REGEX = "\\[INFO\\] .*? \\.+ ([^\\s]+)( \\[.*?\\])?";
+    private static final Pattern REACTOR_OUTCOME_PATTERN = Pattern
+            .compile(REACTOR_OUTCOME_REGEX);
     private static final String BUILD_OUTCOME_REGEX = "\\[INFO\\] BUILD .+";
 
     public MavenResults(String hash) {
@@ -119,7 +128,10 @@ public class MavenResults {
                                                     .getName()).length() + 1));
                         } else if (line.equals(REACTOR_SUMMARY)) {
                             searchState = ParseState.PARSE_SUMMARY;
+                            currentModule = 0;
                         } else if (line.matches(BUILD_OUTCOME_REGEX)) {
+                            this.modules.get(currentModule)
+                                    .setOutcomeFromMavenString(line);
                             this.setOutcome(line);
                         }
                     }
@@ -137,6 +149,21 @@ public class MavenResults {
                     } else if (line.equals(TEST_START)) {
                         searchState = ParseState.FIND_TEST_RUN;
                         currentTest = -1;
+                    } else if (line.equals(COMPILATION_ERROR)) {
+                        this.modules.get(currentModule).setOutcome(
+                                Module.Outcome.COMPILATION_ERROR);
+                        searchState = ParseState.PARSE_COMPILATION_ERRORS;
+                    }
+                    break;
+                case PARSE_COMPILATION_ERRORS:
+                    if (line.matches(COMPILATION_ERROR_REGEX)) {
+                        matcher = COMPILATION_ERROR_PATTERN.matcher(line);
+                        if (matcher.find()) {
+                            this.modules.get(currentModule).addFailureReason(
+                                    matcher.group(1));
+                        }
+                    } else if (line.matches(COMPILATION_ERROR_SUMMATION_REGEX)) {
+                        searchState = ParseState.FIND_PROJECT_START;
                     }
                     break;
                 case FIND_TEST_RUN:
@@ -194,7 +221,14 @@ public class MavenResults {
                     }
                     break;
                 case PARSE_SUMMARY:
-                    if (line.matches(BUILD_OUTCOME_REGEX)) {
+                    if (line.matches(REACTOR_OUTCOME_REGEX)) {
+                        matcher = REACTOR_OUTCOME_PATTERN.matcher(line);
+                        if (matcher.find()) {
+                            this.modules.get(currentModule).setOutcome(
+                                    Module.Outcome.valueOf(matcher.group(1)));
+                        }
+                        currentModule++;
+                    } else if (line.matches(BUILD_OUTCOME_REGEX)) {
                         this.setOutcome(line);
                     }
                     break;
