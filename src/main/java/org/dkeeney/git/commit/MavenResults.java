@@ -25,6 +25,10 @@ public class MavenResults {
         SUCCESS, FAILURE, ERROR
     }
 
+    public enum TestOutcome {
+        RUN, FAIL, ERROR, SKIP
+    }
+
     private static final String MAVEN_SEPARATOR = "[INFO] ------------------------------------------------------------------------";
     private static final String BUILD_ORDER_START = "[INFO] Reactor Build Order:";
     private static final String BUILD_ORDER_LISTING_REGEX = "\\[INFO\\] [^\\s].+";
@@ -266,5 +270,47 @@ public class MavenResults {
 
     public String getFailureReason() {
         return this.failureReason;
+    }
+
+    public int getTotalTestsRun() {
+        return this.getTotalTests(TestOutcome.RUN);
+    }
+
+    public int getTotalTestsError() {
+        return this.getTotalTests(TestOutcome.ERROR);
+    }
+
+    public int getTotalTestsFail() {
+        return this.getTotalTests(TestOutcome.FAIL);
+    }
+
+    public int getTotalTestsSkip() {
+        return this.getTotalTests(TestOutcome.SKIP);
+    }
+
+    private int getTotalTests(TestOutcome testOutcome) {
+        if (this.modules == null) {
+            return 0;
+        } else {
+            int sum = 0;
+            for (Module m : this.modules) {
+                switch (testOutcome) {
+                case RUN:
+                    sum += m.getTestsRun();
+                    break;
+                case FAIL:
+                    sum += m.getTestsFailed();
+                    break;
+                case ERROR:
+                    sum += m.getTestsError();
+                    break;
+                case SKIP:
+                    sum += m.getTestsSkipped();
+                    break;
+                }
+            }
+
+            return sum;
+        }
     }
 }
