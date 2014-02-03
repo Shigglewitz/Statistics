@@ -14,9 +14,15 @@ import org.dkeeney.git.Parser;
 public class MavenResults {
     private final List<Module> modules;
     private final String hash;
+    private Outcome outcome;
+    private String failureReason;
 
     private enum ParseState {
         FIND_BUILD_ORDER, PARSE_BUILD_ORDER, FIND_PROJECT_START, FIND_TESTS, FIND_TEST_RUN, FIND_TEST_RESULT, FIND_PROJECT_RESULT, PARSE_SUMMARY
+    }
+
+    public enum Outcome {
+        SUCCESS, FAILED, ERROR
     }
 
     private static final String MAVEN_SEPARATOR = "[INFO] ------------------------------------------------------------------------";
@@ -40,6 +46,7 @@ public class MavenResults {
     private static final Pattern PROJECT_RESULT_PATTERN = Pattern
             .compile(PROJECT_RESULT_REGEX);
     private static final String REACTOR_SUMMARY = "[INFO] Reactor Summary:";
+    private static final String BUILD_OUTCOME_REGEX = "\\[INFO\\] BUILD .+";
 
     public MavenResults(String hash) {
         this.hash = hash;
@@ -81,6 +88,10 @@ public class MavenResults {
                             this.modules.get(currentModule).setVersion(
                                     matcher.group(2));
                         }
+                    } else if (line.startsWith("[ERROR]")) {
+                        this.outcome = Outcome.ERROR;
+                        this.failureReason = in.nextLine();
+                        return;
                     }
                     break;
                 case PARSE_BUILD_ORDER:
@@ -104,6 +115,8 @@ public class MavenResults {
                                                     .getName()).length() + 1));
                         } else if (line.equals(REACTOR_SUMMARY)) {
                             searchState = ParseState.PARSE_SUMMARY;
+                        } else if (line.matches(BUILD_OUTCOME_REGEX)) {
+                            this.setOutcome(line);
                         }
                     }
                     break;
@@ -163,6 +176,9 @@ public class MavenResults {
                     }
                     break;
                 case PARSE_SUMMARY:
+                    if (line.matches(BUILD_OUTCOME_REGEX)) {
+                        this.setOutcome(line);
+                    }
                     break;
                 default:
                     break;
@@ -176,6 +192,10 @@ public class MavenResults {
         }
     }
 
+    private void setOutcome(String mavenLine) {
+        this.outcome = Outcome.valueOf(mavenLine.split(" ", 3)[2]);
+    }
+
     public void addModule(Module modules) {
         this.modules.add(modules);
     }
@@ -186,5 +206,13 @@ public class MavenResults {
 
     public String getHash() {
         return this.hash;
+    }
+
+    public Outcome getOutcome() {
+        return this.outcome;
+    }
+
+    public String getFailureReason() {
+        return this.failureReason;
     }
 }

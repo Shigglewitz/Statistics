@@ -2,16 +2,19 @@ package org.dkeeney.git.commit;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
 import org.junit.Test;
 
 public class MavenResultsTest {
+    private static final String STATS_FOLDER = "testGitStats/";
+
     @Test
-    public void testLoadCommitData() {
+    public void testLoadMavenResults() {
         Commit c = new Commit("a67d6d293e1eec8e94d198c590eade1e5fe14a1f");
-        c.loadCommitData("testGitStats/");
+        c.loadCommitData(STATS_FOLDER);
         List<Module> modules = c.getMavenResults().getModules();
         List<TestContainer> tests = null;
         Module m = null;
@@ -52,12 +55,15 @@ public class MavenResultsTest {
         assertEquals("Wrong number of tests ran", 3, tests.get(1).getTestsRun());
         assertEquals("Wrong number of tests ran", 6, tests.get(2).getTestsRun());
         assertEquals("Wrong total number of tests ran", 13, m.getTestsRun());
+
+        assertEquals("Wrong outcome", MavenResults.Outcome.SUCCESS, c
+                .getMavenResults().getOutcome());
     }
 
     @Test
-    public void testLoadCommitDataWithoutReactorBuildOrder() {
+    public void testLoadMavenResultsWithoutReactorBuildOrder() {
         Commit c = new Commit("75f085922f776ff41d3c3365dab6cc0e99f93047");
-        c.loadCommitData("testGitStats/");
+        c.loadCommitData(STATS_FOLDER);
         List<Module> modules = c.getMavenResults().getModules();
         List<TestContainer> tests = null;
         Module m = null;
@@ -83,5 +89,26 @@ public class MavenResultsTest {
         assertEquals("Wrong time elapsed", "0 sec", tests.get(1)
                 .getTimeElapsed());
         assertEquals("Wrong total number of tests ran", 11, m.getTestsRun());
+
+        assertEquals("Wrong outcome", MavenResults.Outcome.SUCCESS, c
+                .getMavenResults().getOutcome());
+    }
+
+    @Test
+    public void testLoadMavenResultsWithTotalFailure() {
+        Commit c = new Commit("6df90d8db099a57e25a2173f6fa30471eaa002bb");
+        c.loadCommitData(STATS_FOLDER);
+        List<Module> modules = c.getMavenResults().getModules();
+
+        assertEquals("Wrong outcome", MavenResults.Outcome.ERROR, c
+                .getMavenResults().getOutcome());
+        assertTrue(
+                "Wrong failure cause",
+                c.getMavenResults()
+                        .getFailureReason()
+                        .startsWith(
+                                "org.apache.maven.project.ProjectBuildingException"));
+        assertNotNull("Did not initialize module list", modules);
+        assertEquals("Should not have found any modules", 0, modules.size());
     }
 }
