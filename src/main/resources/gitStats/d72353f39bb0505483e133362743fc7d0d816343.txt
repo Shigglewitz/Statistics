@@ -21,7 +21,7 @@
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ config ---
 [debug] execute contextualize
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\config\src\main\resources
+[INFO] Copying 1 resource
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ config ---
 [INFO] Compiling 1 source file to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\config\target\classes
@@ -29,22 +29,23 @@
 [INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ config ---
 [debug] execute contextualize
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\config\src\test\resources
+[INFO] Copying 1 resource
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:testCompile (default-testCompile) @ config ---
-[INFO] No sources to compile
+[INFO] Compiling 1 source file to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\config\target\test-classes
 [INFO] 
 [INFO] --- maven-surefire-plugin:2.10:test (default-test) @ config ---
-[INFO] No tests to run.
 [INFO] Surefire report directory: D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\config\target\surefire-reports
 
 -------------------------------------------------------
  T E S T S
 -------------------------------------------------------
+Running org.dkeeney.config.ConstantsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 sec
 
 Results :
 
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 
 [INFO] 
 [INFO] --- maven-jar-plugin:2.3.2:jar (default-jar) @ config ---
@@ -57,7 +58,7 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ test-utils ---
 [debug] execute contextualize
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\test-utils\src\main\resources
+[INFO] Copying 1 resource
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ test-utils ---
 [INFO] Compiling 1 source file to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\test-utils\target\classes
@@ -65,7 +66,7 @@ Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
 [INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ test-utils ---
 [debug] execute contextualize
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\test-utils\src\test\resources
+[INFO] Copying 1 resource
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:testCompile (default-testCompile) @ test-utils ---
 [INFO] Compiling 2 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\test-utils\target\test-classes
@@ -94,7 +95,7 @@ Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ utils ---
 [debug] execute contextualize
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\utils\src\main\resources
+[INFO] Copying 1 resource
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ utils ---
 [INFO] Compiling 3 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\utils\target\classes
@@ -102,7 +103,7 @@ Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
 [INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ utils ---
 [debug] execute contextualize
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] Copying 0 resource
+[INFO] Copying 1 resource
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:testCompile (default-testCompile) @ utils ---
 [INFO] Compiling 3 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\utils\target\test-classes
@@ -114,11 +115,11 @@ Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
  T E S T S
 -------------------------------------------------------
 Running org.dkeeney.utils.ColorUtilsTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.1 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 sec
 Running org.dkeeney.utils.ImageMakerTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.34 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.261 sec
 Running org.dkeeney.utils.UtilsTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 
 Results :
 
@@ -135,7 +136,7 @@ Tests run: 13, Failures: 0, Errors: 0, Skipped: 0
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ equations ---
 [debug] execute contextualize
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\src\main\resources
+[INFO] Copying 1 resource
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ equations ---
 [INFO] Compiling 21 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\target\classes
@@ -143,7 +144,7 @@ Tests run: 13, Failures: 0, Errors: 0, Skipped: 0
 [INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ equations ---
 [debug] execute contextualize
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\src\test\resources
+[INFO] Copying 1 resource
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:testCompile (default-testCompile) @ equations ---
 [INFO] Compiling 2 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\equations\target\test-classes
@@ -155,9 +156,9 @@ Tests run: 13, Failures: 0, Errors: 0, Skipped: 0
  T E S T S
 -------------------------------------------------------
 Running org.dkeeney.equations.EquationTest
-Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.172 sec
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.182 sec
 Running org.dkeeney.equations.OperationTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec
 
 Results :
 
@@ -174,7 +175,7 @@ Tests run: 21, Failures: 0, Errors: 0, Skipped: 0
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ graphing ---
 [debug] execute contextualize
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\graphing\src\main\resources
+[INFO] Copying 1 resource
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ graphing ---
 [INFO] Compiling 3 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\graphing\target\classes
@@ -182,7 +183,7 @@ Tests run: 21, Failures: 0, Errors: 0, Skipped: 0
 [INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ graphing ---
 [debug] execute contextualize
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] Copying 4 resources
+[INFO] Copying 5 resources
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:testCompile (default-testCompile) @ graphing ---
 [INFO] Compiling 2 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\org.dkeeney\graphing\target\test-classes
@@ -194,15 +195,9 @@ Tests run: 21, Failures: 0, Errors: 0, Skipped: 0
  T E S T S
 -------------------------------------------------------
 Running org.dkeeney.graphing.ColorGrapherTest
-Took 400ms to calculate.
-Took 211ms to draw.
-Took 655ms to calculate.
-Took 34ms to draw.
-Took 400ms to calculate.
-Took 24ms to draw.
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 2.185 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 2.234 sec
 Running org.dkeeney.graphing.GrapherTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.194 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.178 sec
 
 Results :
 
@@ -215,15 +210,15 @@ Tests run: 7, Failures: 0, Errors: 0, Skipped: 1
 [INFO] Reactor Summary:
 [INFO] 
 [INFO] DKeeney Projects .................................. SUCCESS [0.003s]
-[INFO] Common Config ..................................... SUCCESS [3.105s]
-[INFO] Test Utils ........................................ SUCCESS [1.648s]
-[INFO] Utilities ......................................... SUCCESS [2.108s]
-[INFO] Equations ......................................... SUCCESS [2.156s]
-[INFO] Graphing .......................................... SUCCESS [4.745s]
+[INFO] Common Config ..................................... SUCCESS [3.757s]
+[INFO] Test Utils ........................................ SUCCESS [1.624s]
+[INFO] Utilities ......................................... SUCCESS [1.992s]
+[INFO] Equations ......................................... SUCCESS [2.848s]
+[INFO] Graphing .......................................... SUCCESS [5.139s]
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 14.000s
-[INFO] Finished at: Sun Feb 02 15:59:40 SGT 2014
-[INFO] Final Memory: 39M/181M
+[INFO] Total time: 15.594s
+[INFO] Finished at: Sun Feb 02 16:01:02 SGT 2014
+[INFO] Final Memory: 39M/236M
 [INFO] ------------------------------------------------------------------------

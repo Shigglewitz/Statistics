@@ -8,11 +8,11 @@
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ graphing ---
 [debug] execute contextualize
 [WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
-[INFO] skip non existing resourceDirectory C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\resources
+[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\resources
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ graphing ---
 [WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
-[INFO] Compiling 2 source files to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\classes
+[INFO] Compiling 17 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\classes
 [INFO] 
 [INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ graphing ---
 [debug] execute contextualize
@@ -21,24 +21,24 @@
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:testCompile (default-testCompile) @ graphing ---
 [WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
-[INFO] Compiling 1 source file to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\test-classes
+[INFO] Compiling 6 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\test-classes
 [INFO] 
 [INFO] --- maven-surefire-plugin:2.10:test (default-test) @ graphing ---
-[INFO] Surefire report directory: C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports
+[INFO] Surefire report directory: D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports
 
 -------------------------------------------------------
  T E S T S
 -------------------------------------------------------
 Running org.dkeeney.graphing.ColorGrapherTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.818 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.877 sec
 Running org.dkeeney.graphing.equations.EquationTest
-Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 sec
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
 Running org.dkeeney.graphing.GrapherTest
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.533 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.446 sec
 Running org.dkeeney.graphing.ImageMakerTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.062 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running org.dkeeney.utils.ColorUtilsTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running org.dkeeney.utils.UtilsTest
 Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 
@@ -48,11 +48,11 @@ Tests run: 33, Failures: 0, Errors: 0, Skipped: 0
 
 [INFO] 
 [INFO] --- maven-jar-plugin:2.3.2:jar (default-jar) @ graphing ---
-[INFO] Building jar: C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\graphing-0.0.1-SNAPSHOT.jar
+[INFO] Building jar: D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\graphing-0.0.1-SNAPSHOT.jar
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 14.003s
-[INFO] Finished at: Sat Feb 01 16:17:56 SGT 2014
-[INFO] Final Memory: 17M/181M
+[INFO] Total time: 15.075s
+[INFO] Finished at: Sun Feb 02 15:52:35 SGT 2014
+[INFO] Final Memory: 16M/182M
 [INFO] ------------------------------------------------------------------------

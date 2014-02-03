@@ -8,11 +8,11 @@
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ graphing ---
 [debug] execute contextualize
 [WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
-[INFO] skip non existing resourceDirectory C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\resources
+[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\resources
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ graphing ---
 [WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
-[INFO] Compiling 1 source file to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\classes
+[INFO] Compiling 26 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\classes
 [INFO] 
 [INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ graphing ---
 [debug] execute contextualize
@@ -21,32 +21,32 @@
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:testCompile (default-testCompile) @ graphing ---
 [WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
-[INFO] Compiling 1 source file to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\test-classes
+[INFO] Compiling 7 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\test-classes
 [INFO] 
 [INFO] --- maven-surefire-plugin:2.10:test (default-test) @ graphing ---
-[INFO] Surefire report directory: C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports
+[INFO] Surefire report directory: D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\surefire-reports
 
 -------------------------------------------------------
  T E S T S
 -------------------------------------------------------
 Running org.dkeeney.graphing.ColorGrapherTest
-Took 378ms to calculate.
-Took 192ms to draw.
-Took 728ms to calculate.
-Took 59ms to draw.
-Took 382ms to calculate.
+Took 386ms to calculate.
+Took 199ms to draw.
+Took 743ms to calculate.
+Took 33ms to draw.
+Took 393ms to calculate.
 Took 24ms to draw.
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 2.259 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 2.263 sec
 Running org.dkeeney.graphing.equations.EquationTest
-Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.144 sec
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 sec
 Running org.dkeeney.graphing.GrapherTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.227 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.2 sec
 Running org.dkeeney.graphing.ImageMakerTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.114 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running org.dkeeney.utils.ColorUtilsTest
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 Running org.dkeeney.utils.UtilsTest
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
 
 Results :
 
@@ -54,11 +54,11 @@ Tests run: 39, Failures: 0, Errors: 0, Skipped: 1
 
 [INFO] 
 [INFO] --- maven-jar-plugin:2.3.2:jar (default-jar) @ graphing ---
-[INFO] Building jar: C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\graphing-0.0.1-SNAPSHOT.jar
+[INFO] Building jar: D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\graphing-0.0.1-SNAPSHOT.jar
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 8.054s
-[INFO] Finished at: Sat Feb 01 16:20:05 SGT 2014
+[INFO] Total time: 8.106s
+[INFO] Finished at: Sun Feb 02 15:55:46 SGT 2014
 [INFO] Final Memory: 17M/181M
 [INFO] ------------------------------------------------------------------------

@@ -8,10 +8,11 @@
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ graphing ---
 [debug] execute contextualize
 [WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
-[INFO] skip non existing resourceDirectory C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\resources
+[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\resources
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ graphing ---
-[INFO] Nothing to compile - all classes are up to date
+[WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
+[INFO] Compiling 22 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\classes
 [INFO] 
 [INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ graphing ---
 [debug] execute contextualize
@@ -20,39 +21,39 @@
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:testCompile (default-testCompile) @ graphing ---
 [WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
-[INFO] Compiling 2 source files to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\test-classes
+[INFO] Compiling 7 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\test-classes
 [INFO] -------------------------------------------------------------
 [ERROR] COMPILATION ERROR : 
 [INFO] -------------------------------------------------------------
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\equations\EquationTest.java:[14,61] error: package org.dkeeney.graphing.equations.operations.trigonometry does not exist
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\equations\EquationTest.java:[14,61] error: package org.dkeeney.graphing.equations.operations.trigonometry does not exist
 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\ColorGrapherTest.java:[29,26] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\equations\EquationTest.java:[214,37] error: cannot find symbol
 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\ColorGrapherTest.java:[41,26] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\ColorGrapherTest.java:[29,26] error: cannot find symbol
 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\ColorGrapherTest.java:[51,26] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\ColorGrapherTest.java:[41,26] error: cannot find symbol
 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\equations\EquationTest.java:[214,37] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\ColorGrapherTest.java:[51,26] error: cannot find symbol
 
 [INFO] 5 errors 
 [INFO] -------------------------------------------------------------
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 2.523s
-[INFO] Finished at: Sat Feb 01 16:29:11 SGT 2014
-[INFO] Final Memory: 10M/109M
+[INFO] Total time: 3.861s
+[INFO] Finished at: Sun Feb 02 15:54:25 SGT 2014
+[INFO] Final Memory: 13M/109M
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.1:testCompile (default-testCompile) on project graphing: Compilation failure: Compilation failure:
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\equations\EquationTest.java:[14,61] error: package org.dkeeney.graphing.equations.operations.trigonometry does not exist
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\equations\EquationTest.java:[14,61] error: package org.dkeeney.graphing.equations.operations.trigonometry does not exist
 [ERROR] 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\ColorGrapherTest.java:[29,26] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\equations\EquationTest.java:[214,37] error: cannot find symbol
 [ERROR] 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\ColorGrapherTest.java:[41,26] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\ColorGrapherTest.java:[29,26] error: cannot find symbol
 [ERROR] 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\ColorGrapherTest.java:[51,26] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\ColorGrapherTest.java:[41,26] error: cannot find symbol
 [ERROR] 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\equations\EquationTest.java:[214,37] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\test\java\org\dkeeney\graphing\ColorGrapherTest.java:[51,26] error: cannot find symbol
 [ERROR] -> [Help 1]
 org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.1:testCompile (default-testCompile) on project graphing: Compilation failure
 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:213)

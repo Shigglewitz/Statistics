@@ -8,55 +8,55 @@
 [INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ graphing ---
 [debug] execute contextualize
 [WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
-[INFO] skip non existing resourceDirectory C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\resources
+[INFO] skip non existing resourceDirectory D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\resources
 [INFO] 
 [INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ graphing ---
 [WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
-[INFO] Compiling 14 source files to C:\Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\classes
+[INFO] Compiling 23 source files to D:\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\target\classes
 [INFO] -------------------------------------------------------------
 [ERROR] COMPILATION ERROR : 
 [INFO] -------------------------------------------------------------
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[66,12] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Parenthesis.java:[5,7] error: Parenthesis is not abstract and does not override abstract method cloneToken() in Token
 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[67,33] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[66,12] error: cannot find symbol
 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[142,39] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[67,33] error: cannot find symbol
 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[182,24] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[142,39] error: cannot find symbol
 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[234,19] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[182,24] error: cannot find symbol
 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[243,31] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[234,19] error: cannot find symbol
 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[244,19] error: method operate in class Operation cannot be applied to given types;
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[243,31] error: cannot find symbol
 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Parenthesis.java:[5,7] error: Parenthesis is not abstract and does not override abstract method cloneToken() in Token
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[244,19] error: method operate in class Operation cannot be applied to given types;
 
 [INFO] 8 errors 
 [INFO] -------------------------------------------------------------
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 2.416s
-[INFO] Finished at: Sat Feb 01 16:18:40 SGT 2014
+[INFO] Total time: 2.607s
+[INFO] Finished at: Sun Feb 02 15:53:35 SGT 2014
 [INFO] Final Memory: 10M/109M
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.1:compile (default-compile) on project graphing: Compilation failure: Compilation failure:
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[66,12] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Parenthesis.java:[5,7] error: Parenthesis is not abstract and does not override abstract method cloneToken() in Token
 [ERROR] 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[67,33] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[66,12] error: cannot find symbol
 [ERROR] 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[142,39] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[67,33] error: cannot find symbol
 [ERROR] 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[182,24] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[142,39] error: cannot find symbol
 [ERROR] 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[234,19] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[182,24] error: cannot find symbol
 [ERROR] 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[243,31] error: cannot find symbol
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[234,19] error: cannot find symbol
 [ERROR] 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[244,19] error: method operate in class Operation cannot be applied to given types;
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[243,31] error: cannot find symbol
 [ERROR] 
-[ERROR] \Users\Daniel\workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Parenthesis.java:[5,7] error: Parenthesis is not abstract and does not override abstract method cloneToken() in Token
+[ERROR] \workspace\org.dkeeney\statistics\target\clone\workspace\graphing\src\main\java\org\dkeeney\graphing\equations\Equation.java:[244,19] error: method operate in class Operation cannot be applied to given types;
 [ERROR] -> [Help 1]
 org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.1:compile (default-compile) on project graphing: Compilation failure
 	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:213)
