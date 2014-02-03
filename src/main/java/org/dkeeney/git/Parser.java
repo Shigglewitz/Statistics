@@ -1,7 +1,10 @@
 package org.dkeeney.git;
 
+import java.awt.Color;
+import java.awt.Point;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -13,6 +16,8 @@ import java.util.List;
 import java.util.Scanner;
 
 import org.dkeeney.git.commit.Commit;
+import org.dkeeney.graphing.DataGrapher;
+import org.dkeeney.utils.ImageMaker;
 
 public class Parser {
     private static final String GIT_COMMIT_REGEX = "commit [0-9a-f]{40}";
@@ -89,15 +94,33 @@ public class Parser {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Parser p = new Parser();
         List<Commit> commitHistory = p.parseCommitHistory();
+        List<Point> totalTestsRun = new ArrayList<>();
+        List<Point> totalTestsFail = new ArrayList<>();
+        List<Point> totalTestsError = new ArrayList<>();
+        List<Point> totalTestsSkip = new ArrayList<>();
+        int i = 0;
         for (Commit c : commitHistory) {
             c.loadCommitData();
-            if (c.getMavenResults().getOutcome() == null) {
-                System.out.println(c.getHash());
-            }
+            totalTestsRun.add(new Point(i, c.getMavenResults()
+                    .getTotalTestsRun()));
+            totalTestsFail.add(new Point(i, c.getMavenResults()
+                    .getTotalTestsFail()));
+            totalTestsError.add(new Point(i, c.getMavenResults()
+                    .getTotalTestsError()));
+            totalTestsSkip.add(new Point(i, c.getMavenResults()
+                    .getTotalTestsSkip()));
+            i++;
         }
+        DataGrapher dg = new DataGrapher();
+        dg.addPoints(totalTestsRun, Color.GREEN);
+        dg.addPoints(totalTestsError, Color.RED);
+        dg.addPoints(totalTestsFail, Color.BLUE);
+        dg.addPoints(totalTestsSkip, Color.BLACK);
+        ImageMaker.saveImage(dg.getGraph(), "commit-history");
         System.out.println("Success");
+
     }
 }

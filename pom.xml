@@ -10,6 +10,14 @@
 	<artifactId>statistics</artifactId>
 	<name>Git Statistics</name>
 
+	<dependencies>
+	    <dependency>
+	        <groupId>org.dkeeney</groupId>
+            <artifactId>graphing</artifactId>
+            <version>${dkeeneyVersion}</version>
+	    </dependency>
+	</dependencies>
+	
 	<build>
 		<plugins>
 			<plugin>
